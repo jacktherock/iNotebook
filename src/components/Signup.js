@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 
 const Signup = (props) => {
 
@@ -29,7 +29,6 @@ const Signup = (props) => {
             localStorage.setItem('token', json.authtoken);
             history.push("/")
             props.showAlert("Account Created Successfully !", "success")
-
         }
         else {
             props.showAlert("Invalid credentials!", "danger")
@@ -38,7 +37,7 @@ const Signup = (props) => {
 
     return (
         <div className="container mt-3">
-            <h2 className="mb-3 text-center ">SIGNUP</h2>
+            <h1 className="mb-3 text-center ">SIGNUP</h1>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="name" className="form-label">Name</label>
@@ -59,7 +58,7 @@ const Signup = (props) => {
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>
             <div className="mt-3">Already have an account?
-                <a className="mx-2" href="/login">Login to Account</a>
+                <Link className="mx-2" to="/login">Login to Account</Link>
             </div>
         </div>
     )

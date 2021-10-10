@@ -8,7 +8,6 @@ const Navbar = () => {
     const handleLogout =()=>{
         localStorage.removeItem('token');
         history.push('/login');
-        
     }
 
     let location = useLocation();
